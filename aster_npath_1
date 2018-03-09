@@ -1,0 +1,13 @@
+create table aster_npath_1 as
+select a.unique_visitors,a.visit_num,a.visit_start_time_gmt,
+visit_page_num,date_time,mobile_id,post_page_event,pagename,page_url,referrer,ref_Domain,first_hit_referrer,
+visit_start_pagename,visit_start_page_url,campaign,post_campaign,post_event_list,click_action,username
+
+from
+(select unique_visitors,visit_num,visit_start_time_gmt
+from aster_raw_src_data
+group by
+1,2,3) a
+left join
+aster_raw_src_data b
+on a.unique_visitors=b.unique_visitors and a.visit_num=b.visit_num and a.visit_start_time_gmt=b.visit_start_time_gmt;
