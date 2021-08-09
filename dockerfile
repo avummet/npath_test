@@ -1,5 +1,5 @@
 FROM python:3
-MAINTAINER ananth vummethala <ananthvummethala@discover.com>
+MAINTAINER ananth vummethala
 
 WORKDIR /app
 ADD . /app
